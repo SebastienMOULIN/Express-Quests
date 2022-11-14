@@ -12,11 +12,11 @@ const welcome = (req, res) => {
 app.get("/", welcome);
 
 const movieHandlers = require("./movieHandlers");
-const users = require("./users");
+const users = require("./userHandlers");
 
 app.get("/api/movies", movieHandlers.getMovies);
 app.get("/api/users", users.getUsers);
-app.get("/api/users/:id", users.getUsersId);
+app.get("/api/users/:id", users.getUserById);
 app.get("/api/movies/:id", movieHandlers.getMovieById);
 
 app.listen(port, (err) => {
